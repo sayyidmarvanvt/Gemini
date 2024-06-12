@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
+* {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
 }
 
-.sidebar img{
-  width: 20px;
+.heading {
+  background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-2 p-2 rounded-[50px] text-gray-900 hover:bg-slate-50 cursor-pointer;
+}
+
+.sidebar img {
+  @apply w-5;
 }
