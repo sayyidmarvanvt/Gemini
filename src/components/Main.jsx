@@ -54,30 +54,33 @@ const Main = () => {
           ))}
         </div>
         <div className="absolute w-full max-w-3xl bottom-0 m-auto">
-          <div className="flex items-center justify-between gap-5 bg-slate-50 py-2 px-5 rounded-3xl">
-            <input className="flex-1 bg-transparent border-none outline-none p-2 text-lg" type="text" placeholder="Enter a prompt here" />
+          <div className="flex items-center justify-between gap-5 bg-slate-50 py-1 px-5 rounded-3xl">
+            <input
+              className="flex-1 bg-transparent border-none outline-none p-1 text-lg"
+              type="text"
+              placeholder="Enter a prompt here"
+            />
             <div className="flex items-center gap-4">
               <img
                 className="w-6 cursor-pointer"
                 src={assets.gallery_icon}
-                alt=""
+                alt="Gallery"
               />
               <img
                 className="w-6 cursor-pointer"
                 src={assets.mic_icon}
-                alt=""
+                alt="Mic"
               />
               <img
                 className="w-6 cursor-pointer"
                 src={assets.send_icon}
-                alt=""
+                alt="Send"
               />
             </div>
           </div>
           <p className="text-xs my-2 mx-auto text-center font-light">
             Gemini may display inaccurate info, including about people,so
-            double-check its responses. 
-            Your privacy and Gemini Apps
+            double-check its responses.Your privacy and Gemini Apps
           </p>
         </div>
       </div>
