@@ -46,7 +46,7 @@ const Main = () => {
         smartBackspace: true,
         showCursor: false,
         autoInsertCss: true,
-        contentType: "html", 
+        contentType: "html",
       });
 
       return () => {
@@ -91,7 +91,7 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className="px-5 max-h-[70vh] overflow-y-scroll hide">
+          <div className=" px-5 max-h-[70vh] overflow-y-scroll hide">
             <div className="mt-10 mb-5 flex items-center gap-5">
               <img
                 className="w-10 rounded-full "
@@ -113,7 +113,7 @@ const Main = () => {
                   <hr className="gradient-bar" />
                 </div>
               ) : (
-                <p ref={el}></p>
+                <p className="pt-2" ref={el}></p>
               )}
             </div>
           </div>
@@ -140,10 +140,12 @@ const Main = () => {
                 alt="Mic"
               />
               <img
-                onClick={() => onSend()}
-                className="w-6 cursor-pointer"
                 src={assets.send_icon}
                 alt="Send"
+                onClick={() => input.length > 0 && onSend()}
+                className={`w-6 cursor-pointer ${
+                  input.length === 0 && "opacity-80 cursor-not-allowed"
+                }`}
               />
             </div>
           </div>

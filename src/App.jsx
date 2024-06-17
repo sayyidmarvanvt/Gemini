@@ -5,7 +5,7 @@ import "./index.css"
 
 const App = () => {
   return (
-    <div className="min-h-screen flex">
+    <div className="h-screen flex ">
       <Sidebar />
       <Main/>
     </div>
