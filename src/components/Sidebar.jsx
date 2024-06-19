@@ -4,26 +4,28 @@ import { Context } from "../context/Context";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
-  const { prevPrompt, onSend, setRecentPrompt ,newChat} = useContext(Context);
+  const { prevPrompt, onSend, setRecentPrompt, newChat } = useContext(Context);
   const loadPrompt = async (prompt) => {
     setRecentPrompt(prompt);
     await onSend(prompt);
   };
 
-  
   return (
-    <div className="min-h-screen inline-flex flex-col justify-between bg-slate-200 sidebar p-4 font-display rounded-lg">
-      <div>
+    <div className="min-h-screen inline-flex flex-col justify-between bg-slate-200 sidebar p-4  font-display rounded-lg">
+      <div >
         <img
           onClick={() => setOpen((prev) => !prev)}
           src={assets.menu_icon}
           alt="Menu Icon"
-          className="ml-3 pt-4 cursor-pointer"
+          className="pt-4 cursor-pointer"
         />
-        <div onClick={()=>newChat()} className="mt-10 inline-flex items-center gap-2 p-2 px-3 bg-slate-100 rounded-[50px] text-sm text-gray-500 cursor-pointer">
+        {open && <div
+          onClick={() => newChat()}
+          className="mt-10 inline-flex items-center gap-2 p-2 px-3 bg-slate-100 rounded-[50px] text-sm text-gray-500 cursor-pointer "
+        >
           <img src={assets.plus_icon} alt="Plus Icon" />
-          {open && <p>New Chat</p>}
-        </div>
+           <p>New Chat</p>
+        </div> } 
         {open && (
           <div className="flex flex-col mt-5">
             <p className="mb-2 text-gray-700">Recent</p>

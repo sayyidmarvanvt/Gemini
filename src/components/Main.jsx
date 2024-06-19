@@ -56,7 +56,7 @@ const Main = () => {
   }, [resultData]);
 
   return (
-    <main className="flex-1 min-h-scrren pb-4 relative font-display">
+    <main className="w-full min-h-screen pb-4  font-display relative ">
       <nav className="flex items-center justify-between text-lg p-5 text-gray-500">
         <p>Gemini</p>
         <img
@@ -65,20 +65,20 @@ const Main = () => {
           className="w-10 rounded-3xl"
         />
       </nav>
-      <div className="max-w-3xl m-auto">
+      <div className="max-w-6xl m-auto px-4">
         {!showResult ? (
           <>
-            <div className="my-12 text-6xl text-gray-400 p-5">
+            <div className="my-12 text-6xl text-gray-400">
               <p>
                 <span className="heading">Hello, Dev.</span>
               </p>
               <p>How can I help you today?</p>
             </div>
-            <div className="flex gap-4 p-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-5">
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className="h-52 w-1/4 relative p-4 bg-slate-100 rounded-lg cursor-pointer hover:bg-slate-200"
+                  className="h-52 relative p-4 bg-slate-100 rounded-lg cursor-pointer hover:bg-slate-200"
                 >
                   <p className="text-gray-700">{card.text}</p>
                   <img
@@ -91,10 +91,10 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div className=" px-5 max-h-[70vh] overflow-y-scroll hide">
+          <div className="max-h-[70vh] overflow-y-scroll hide">
             <div className="mt-10 mb-5 flex items-center gap-5">
               <img
-                className="w-10 rounded-full "
+                className="w-10 rounded-full"
                 src={assets.user_icon}
                 alt=""
               />
@@ -102,7 +102,7 @@ const Main = () => {
             </div>
             <div className="flex items-start gap-5">
               <img
-                className="w-10 rounded-full "
+                className="w-10 rounded-full"
                 src={assets.gemini_icon}
                 alt=""
               />
@@ -119,8 +119,8 @@ const Main = () => {
           </div>
         )}
 
-        <div className="absolute w-full max-w-3xl bottom-0 m-auto">
-          <div className="flex items-center justify-between gap-5 bg-slate-50 py-2 px-5 rounded-3xl">
+        <div className="md:absolute max-w-6xl w-full  bottom-0 m-auto px-4">
+          <div className="relative flex items-center justify-between gap-5 bg-slate-50 py-2 px-5 rounded-3xl ">
             <input
               onChange={(e) => setInput(e.target.value)}
               value={input}
@@ -128,7 +128,7 @@ const Main = () => {
               type="text"
               placeholder="Enter a prompt here"
             />
-            <div className="flex items-center gap-4">
+            <div className="absolute right-0 pr-2 flex items-center  sm:gap-4">
               <img
                 className="w-6 cursor-pointer"
                 src={assets.gallery_icon}
@@ -150,8 +150,8 @@ const Main = () => {
             </div>
           </div>
           <p className="text-xs my-2 mx-auto text-center font-light">
-            Gemini may display inaccurate info, including about people,so
-            double-check its responses.Your privacy and Gemini Apps
+            Gemini may display inaccurate info, including about people, so
+            double-check its responses. Your privacy and Gemini Apps
           </p>
         </div>
       </div>
